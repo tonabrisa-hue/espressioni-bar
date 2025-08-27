@@ -207,9 +207,12 @@
               design e coquetelaria para transformar cada evento em uma experiência única.
             </p>
             <a
-           
+              className="btn-ghost"
+              href={portfolioLink}
+              target="_blank"
+              rel="noreferrer"
             >
-            
+              Ver portfólio completo
             </a>
           </div>
         </div>
@@ -236,9 +239,10 @@
               estável, temperatura ideal e um visual que harmoniza com o tema da festa.
             </p>
             <ul className="chopp-list">
-              <li>° Chopeira com regulagem fina e vazão constante</li>
-             <li>° Estética personalizada conforme o projeto</li>
-              <li>° Higienização e operação profissional</li>
+              <li>🍺 Chopeira com regulagem fina e vazão constante</li>
+              <li>❄️ Serviço gelado do primeiro ao último copo</li>
+              <li>🎛️ Estética personalizada conforme o projeto</li>
+              <li>🧼 Higienização e operação profissional</li>
             </ul>
             <a className="btn-cta" href={waLink} target="_blank" rel="noreferrer">
               Quero o painel no meu evento
@@ -284,12 +288,12 @@
         /* NAV */
         .navbar{position:sticky;top:0;background:rgba(5,5,5,.9);backdrop-filter:saturate(140%) blur(6px);z-index:50}
         .nav-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;height:86px;gap:18px}
-        .logo-main{height:200px;margin-top:-50px;object-fit:contain;filter:drop-shadow(0 3px 12px rgba(0,0,0,.35))}
-        .nav-menu{display:flex;gap:28px;margin-top:-50px;justify-self:center}
+        .logo-main{height:64px;object-fit:contain;filter:drop-shadow(0 3px 12px rgba(0,0,0,.35))}
+        .nav-menu{display:flex;gap:28px;justify-self:center}
         .nav-menu a{opacity:.92}
         .nav-menu a:hover{opacity:1}
         .btn-wa-top{
-          background:#25D366;color:#0b1a0f;margin-top:-50px;font-weight:800;border-radius:999px;padding:12px 18px;
+          background:#25D366;color:#0b1a0f;font-weight:800;border-radius:999px;padding:12px 18px;
           box-shadow:0 6px 18px rgba(37,211,102,.28)
         }
 
@@ -300,7 +304,7 @@
           display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
           padding:8px 12px;border-radius:999px;font-size:14px;margin-bottom:14px
         }
-        .title{font-weight:900;line-height:1.04;margin-bottom:12px;font-size:clamp(28px,6vw,58px);text-shadow:0 2px 12px rgba(0,0,0,.45)}
+        .title{font-weight:900;line-height:1.04;margin-bottom:12px;font-size:clamp(30px,6.2vw,64px);text-shadow:0 2px 12px rgba(0,0,0,.45)}
         .lead{color:#dcdcdc;font-size:clamp(14px,1.2vw,18px);line-height:1.75;margin-top:10px;max-width:720px}
         .lead.small{opacity:.96}
         .cta-row{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap}
@@ -325,7 +329,7 @@
           background:linear-gradient(90deg,#a855f7,#ec4899,#f59e0b);filter:blur(1px);opacity:.75
         }
         .medalha{
-          position:absolute;right:18px;bottom:-100px;width:150px;
+          position:absolute;right:18px;bottom:-10px;width:150px;
           filter:drop-shadow(0 8px 18px rgba(0,0,0,.45));z-index:5
         }
 
