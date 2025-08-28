@@ -74,15 +74,11 @@
           {/* Visual + Medalha */}
           <div className="visual">
             <div className="card-visual">
-              <video
-                className="hero-video"
-                src="/branding/bar-video.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster="/branding/bar-foto.jpg"
-              />
+              <img
+               src="/branding/bar-foto.jpg"
+               alt="Bar Eternize Espressioni"
+                className="hero-image"
+                />
             </div>
 
             {/* Medalha 100% Personalizado (imagem enviada) */}
