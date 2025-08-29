@@ -81,7 +81,7 @@
                 muted
                 loop
                 playsInline
-                poster="/branding/bar-foto.jpg"
+                poster="/branding/espressioni-bar.jpg"
               />
             </div>
 
