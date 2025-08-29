@@ -70,14 +70,14 @@
               </a>
             </div>
           </div>
-
+S
           {/* Visual + Medalha */}
           <div className="visual">
             <div className="card-visual">
               <img
-               src="/branding/bar-foto.jpg"
+               src="/branding/espressioni-bar.jpg?v=3"
                alt="Bar Eternize Espressioni"
-                className="hero-image"
+                className="w-full max-w-[500px] h-auto rounded-2xl object-cover"
                 />
             </div>
 
