@@ -39,9 +39,12 @@ export default function Pacotes() {
   <div className={styles.badge}>
     ⭐ <span>Mais Vendido</span>
   </div>
-<img src="/branding/Experience.png" alt="Pacote Experience" className={styles.packageImage} />
-S
-  <h3>Experience</h3>
+<img
+  src="/branding/Experience.png"
+  alt="Pacote Experience"
+  className={styles.packageImage}
+/>
+<h3>Experiência</h3>
   <div className={styles.ribbon}>Pacote preferido pelos clientes</div>
   <p>
             • A partir de 40 pessoas <br />
