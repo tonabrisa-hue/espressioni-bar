@@ -26,6 +26,22 @@ export default function MetaPixel() {
         `}
       </Script>
 
+      {/* ✅ Rastrear todos os cliques em links do WhatsApp */}
+      <Script id="meta-pixel-whatsapp" strategy="afterInteractive">
+        {`
+          document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll("a[href*='wa.me'], a[href*='api.whatsapp.com']");
+            links.forEach(link => {
+              link.addEventListener("click", () => {
+                if (typeof fbq !== "undefined") {
+                  fbq("track", "Contact", { content_name: "Clique WhatsApp" });
+                }
+              });
+            });
+          });
+        `}
+      </Script>
+
       <noscript>
         <img
           height="1"

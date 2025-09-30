@@ -1,0 +1,256 @@
+/* ===== PACOTES SECTION ===== */
+.pacotes {
+  position: relative;
+  padding: 80px 0;
+  background: #f5efe6; /* fundo bege claro */
+}
+
+/* Divider elegante */
+.sectionDivider {
+  position: relative;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionDivider h2 {
+  display: inline-block;
+  font-size: 34px;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: transparent;
+  background-image: linear-gradient(90deg, #b68a27, #ffd86b, #b68a27);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shineGold 6s linear infinite;
+  padding: 0 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.sectionDivider::before,
+.sectionDivider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.sectionDivider::before {
+  left: 0;
+}
+.sectionDivider::after {
+  right: 0;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Card */
+.card {
+  background: #7b3737;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  padding: 28px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+/* Título do pacote */
+.card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+/* Texto */
+.card p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+/* Preço */
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #72622b;
+  margin-bottom: 16px;
+}
+
+/* Botão dourado com brilho */
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(90deg, #b68a27, #ffd86b, #b68a27);
+  color: #000;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background-size: 200% auto;
+  animation: shineGold 4s linear infinite;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.ctaButton:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+}
+
+/* Animação do brilho */
+@keyframes shineGold {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+  .card {
+    padding: 20px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+}
+/* Selo dourado "Mais Vendido" */
+.badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: radial-gradient(circle at 30% 30%, #ffd86b, #b68a27);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  text-align: center;
+  line-height: 1.2;
+  animation: pulseGold 3s infinite ease-in-out;
+}
+
+.badge span {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fffbea;
+}
+
+/* Efeito pulsante dourado */
+@keyframes pulseGold {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+  50% { transform: scale(1.1); box-shadow: 0 0 20px 8px rgba(212, 175, 55, 0.3); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+}
+
+/* Faixa dourada abaixo do título */
+.ribbon {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffd86b, #b68a27);
+  color: #fff;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 12px;
+  animation: shineGold 4s linear infinite;
+}
+.card {
+  position: relative; /* 🔥 Necessário pro selo ficar dentro */
+  background: #cac3c3;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* 🔥 imagem dentro do card */
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 4600px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+/* Selo dourado "Mais Vendido" */
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: radial-gradient(circle at 30% 30%, #ffd86b, #b68a27);
+  color: #fff;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 8px 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  text-align: center;
+  line-height: 1.2;
+  animation: pulseGold 3s infinite ease-in-out;
+  z-index: 2;
+}
+
+.badge span {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  color: #fffbea;
+}
+
+/* Efeito pulsante dourado */
+@keyframes pulseGold {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+  50% { transform: scale(1.08); box-shadow: 0 0 15px 5px rgba(212, 175, 55, 0.3); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+}
+
+/* Faixa dourada abaixo do título */
+.ribbon {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffd86b, #b68a27);
+  color: #fff;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin: 8px 0 12px;
+  animation: shineGold 4s linear infinite;
+}

@@ -1,0 +1,39 @@
+/* layout.css */
+
+/* Container centralizado */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Botões */
+.btn-cta {
+  display: inline-block;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: #25D366;
+  color: #0b1a0f;
+  font-weight: 800;
+  box-shadow: 0 8px 22px rgba(37,211,102,.26);
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.btn-cta:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.btn-ghost {
+  display: inline-block;
+  padding: 13px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.16);
+  color: #fff;
+  opacity: .9;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  border-color: rgba(255,255,255,.28);
+}

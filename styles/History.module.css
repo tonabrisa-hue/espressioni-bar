@@ -1,0 +1,221 @@
+/* ===== HISTORY SECTION ===== */
+.history {
+  position: relative;
+  padding: 60px 0;
+  background: #f5efe6; /* bege claro */
+}
+
+.historyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  /* 🔄 Inverte a ordem */
+  direction: rtl;
+}
+
+.copy {
+  direction: ltr; /* mantém o texto normal */
+}
+
+
+/* Texto */
+.copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   transform: translateY(-60px);
+}
+
+/* Divisor elegante entre seções */
+.sectionDivider {
+  position: relative;
+  text-align: center;
+  margin: 80px auto 50px;
+}
+
+.sectionDivider h2 {
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 800;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0 20px;
+  background: #f5efe6; /* cor do fundo da página para "cortar" a linha */
+  color: #d4af37; /* dourado */
+  position: relative;
+  z-index: 2;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(90deg, #b68a27, #ffd86b, #b68a27);
+  background-size: 200% auto;
+  animation: shineGold 4s linear infinite;
+}
+
+/* Linhas que se estendem */
+.sectionDivider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  z-index: 1;
+}
+
+/* Animação do dourado no texto */
+@keyframes shineGold {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.title {
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  font-size: clamp(26px, 5vw, 44px);
+  color: #1a1a1a;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.gold {
+  background: linear-gradient(180deg, #ffdf6b, #b68a27);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead {
+  color: #333;
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.7;
+  margin-top: 12px;
+  max-width: 720px;
+}
+
+.small {
+  opacity: 0.96;
+}
+
+/* Visual */
+.visual {
+  position: relative;
+}
+
+.cardVisual {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 16 / 14;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  background: #000;
+}
+
+/* Carrossel */
+.historySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.historyMedia {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.historyVideo {
+  width:900px;
+  height: 800px;
+  object-fit: contain;      /* preenche o espaço */
+  object-position: top; /* garante que fique centralizado */
+  border-radius: 10px;
+  display: block;
+  background: #000;
+}
+
+/* Glow dourado */
+
+
+
+@keyframes shineGold {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .historyGrid {
+    grid-template-columns: 1fr;
+  }
+  .visual {
+    order: -1;
+  }
+  .cardVisual {
+    height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: clamp(22px, 8vw, 32px);
+  }
+}
+/* ===== DIVISOR NOBRE ===== */
+
+
+.sectionDivider::before,
+.sectionDivider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 38%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.sectionDivider::before {
+  left: 0;
+}
+
+.sectionDivider::after {
+  right: 0;
+}
+
+.sectionDivider h2 {
+  display: inline-block;
+  font-size: 34px;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: transparent;
+  background-image: linear-gradient(90deg, #b68a27, #ffd86b, #b68a27);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shineGold 6s linear infinite;
+  padding: 0 25px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Efeito dourado correndo */
+@keyframes shineGold {
+  to {
+    background-position: 200% center;
+  }
+}

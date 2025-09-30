@@ -1,0 +1,47 @@
+/* FOOTER */
+.footer {
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  background: #0b0b0b;
+}
+
+.foot-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.foot-copy {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.socials {
+  display: flex;
+  gap: 18px;
+}
+
+.social {
+  font-weight: 700;
+}
+
+.insta {
+  color: #e1306c;
+}
+
+.wa {
+  color: #25d366;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .foot-flex {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

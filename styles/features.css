@@ -1,0 +1,54 @@
+/* FEATURES (cards entre hero e história) */
+.features {
+  padding: 40px 0;
+}
+
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feat-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #131313;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.32);
+}
+
+.ico-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #d4a72c;
+  border: 1px solid rgba(212, 167, 44, 0.34);
+  background: linear-gradient(180deg, rgba(212,167,44,.12), rgba(212,167,44,.04));
+}
+
+.feat-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+.feat-desc {
+  color: #cfcfcf;
+  margin-top: 6px;
+  line-height: 1.7;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .feat-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}

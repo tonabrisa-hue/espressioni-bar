@@ -1,0 +1,200 @@
+/* ===== HISTORY SECTION (CHOPP) ===== */
+.history {
+  position: relative;
+  padding: 60px 0;
+  background: #f5efe6; /* bege claro */
+}
+
+.historyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  direction: ltr; /* mantém texto normal */
+  transform: translateY(-40px);
+}
+
+/* Texto */
+.choppText {
+  color: #000; /* texto preto */
+  font-size: 24px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Divisor elegante */
+.sectionDivider {
+  position: relative;
+  text-align: center;
+  margin: 80px auto 50px;
+}
+
+.sectionDivider h2 {
+  display: inline-block;
+  font-size: 34px;
+  font-weight: 800;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0 20px;
+  background: #f5efe6;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(90deg, #b68a27, #ffd86b, #b68a27);
+  background-size: 200% auto;
+  animation: shineGold 6s linear infinite;
+  position: relative;
+  z-index: 2;
+}
+
+.sectionDivider::before,
+.sectionDivider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 38%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.sectionDivider::before {
+  left: 0;
+}
+.sectionDivider::after {
+  right: 0;
+}
+
+/* Valor + CTA */
+.priceBox {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 800;
+  color: #d4af37; /* dourado */
+  margin-bottom: 14px;
+}
+
+/* Botão dourado igual ao Hero */
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(135deg, #d4af37, #f5d76e, #d4af37);
+  color: #1a1a1a;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.5);
+}
+
+/* ===== BOTÃO DOURADO ===== */
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(90deg, #b68a27, #ffd86b, #b68a27);
+  background-size: 200% auto;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  animation: shineGold 4s linear infinite;
+}
+
+/* Efeito no hover */
+.ctaButton:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* Keyframes já usados nos títulos */
+@keyframes shineGold {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+/* Visual */
+.visual {
+  position: relative;
+}
+
+.cardVisual {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 16 / 14;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  background: #000;
+}
+
+.historySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.historyMedia {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.historyVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #000;
+}
+
+/* Animação do dourado */
+@keyframes shineGold {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .historyGrid {
+    grid-template-columns: 1fr;
+  }
+  .visual {
+    order: -1; /* carrossel vai para cima */
+  }
+  .cardVisual {
+    height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sectionDivider h2 {
+    font-size: clamp(22px, 8vw, 28px);
+  }
+  .price {
+    font-size: 20px;
+  }
+  .ctaButton {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
