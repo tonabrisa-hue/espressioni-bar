@@ -1,80 +1,35 @@
-/* ===== HISTORY SECTION ===== */
+/* ===== HISTORY SECTION (revisado) ===== */
 .history {
   position: relative;
   padding: 60px 0;
-  background: #f5efe6; /* bege claro */
+  background: #f5efe6;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: clip; /* nada escapa lateralmente */
 }
 
+/* Grid com áreas, sem "direction: rtl" */
 .historyGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-areas: "copy visual";
   align-items: center;
-  gap: 40px;
-  max-width: 1280px;
+  gap: clamp(20px, 4vw, 40px);
+  width: min(1280px, 100%);
   margin: 0 auto;
   padding: 40px 20px;
-
-  /* 🔄 Inverte a ordem */
-  direction: rtl;
+  box-sizing: border-box;
+  min-width: 0;
 }
-
-.copy {
-  direction: ltr; /* mantém o texto normal */
-}
-
 
 /* Texto */
 .copy {
+  grid-area: copy;
   display: flex;
   flex-direction: column;
   justify-content: center;
-   transform: translateY(-60px);
-}
-
-/* Divisor elegante entre seções */
-.sectionDivider {
-  position: relative;
-  text-align: center;
-  margin: 80px auto 50px;
-}
-
-.sectionDivider h2 {
-  display: inline-block;
-  font-size: 28px;
-  font-weight: 800;
-  font-family: "Playfair Display", serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 0 20px;
-  background: #f5efe6; /* cor do fundo da página para "cortar" a linha */
-  color: #d4af37; /* dourado */
-  position: relative;
-  z-index: 2;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(90deg, #b68a27, #ffd86b, #b68a27);
-  background-size: 200% auto;
-  animation: shineGold 4s linear infinite;
-}
-
-/* Linhas que se estendem */
-.sectionDivider::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
-  z-index: 1;
-}
-
-/* Animação do dourado no texto */
-@keyframes shineGold {
-  to {
-    background-position: 200% center;
-  }
+  min-width: 0;
+  transform: translateY(-60px);
 }
 
 .title {
@@ -101,81 +56,12 @@
   max-width: 720px;
 }
 
-.small {
-  opacity: 0.96;
-}
-
-/* Visual */
-.visual {
+/* Divisor nobre */
+.sectionDivider {
   position: relative;
+  text-align: center;
+  margin: 80px auto 50px;
 }
-
-.cardVisual {
-  width: 100%;
-  max-width: 600px;
-  aspect-ratio: 16 / 14;
-  border-radius: 28px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  background: #000;
-}
-
-/* Carrossel */
-.historySwiper {
-  width: 100%;
-  height: 100%;
-}
-
-.historyMedia {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.historyVideo {
-  width:900px;
-  height: 800px;
-  object-fit: contain;      /* preenche o espaço */
-  object-position: top; /* garante que fique centralizado */
-  border-radius: 10px;
-  display: block;
-  background: #000;
-}
-
-/* Glow dourado */
-
-
-
-@keyframes shineGold {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
-}
-
-/* Responsivo */
-@media (max-width: 1024px) {
-  .historyGrid {
-    grid-template-columns: 1fr;
-  }
-  .visual {
-    order: -1;
-  }
-  .cardVisual {
-    height: 320px;
-  }
-}
-
-@media (max-width: 640px) {
-  .title {
-    font-size: clamp(22px, 8vw, 32px);
-  }
-}
-/* ===== DIVISOR NOBRE ===== */
-
 
 .sectionDivider::before,
 .sectionDivider::after {
@@ -187,13 +73,8 @@
   background: linear-gradient(90deg, transparent, #d4af37, transparent);
 }
 
-.sectionDivider::before {
-  left: 0;
-}
-
-.sectionDivider::after {
-  right: 0;
-}
+.sectionDivider::before { left: 0; }
+.sectionDivider::after  { right: 0; }
 
 .sectionDivider h2 {
   display: inline-block;
@@ -213,9 +94,72 @@
   z-index: 2;
 }
 
-/* Efeito dourado correndo */
 @keyframes shineGold {
-  to {
-    background-position: 200% center;
+  to { background-position: 200% center; }
+}
+
+/* Visual (card + Swiper) */
+.visual {
+  grid-area: visual;
+  position: relative;
+  min-width: 0;
+}
+
+.cardVisual {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 16 / 14;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  background: #000;
+  margin-inline: auto;  /* centraliza o card */
+}
+
+/* Swiper “blindado” contra overflow */
+.historySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* Alvos citados pelo seu scanner */
+.historyMedia,
+.historyVideo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;     /* cobre o card */
+  display: block;
+  background: #000;
+  border-radius: 0;
+}
+
+/* Estilos globais do Swiper, restritos a esta seção */
+:global(.swiper) { width: 100%; max-width: 100%; overflow: hidden; }
+:global(.swiper-wrapper) { box-sizing: border-box; }
+:global(.swiper-slide) { width: 100% !important; }
+
+/* Paginação mais próxima */
+:global(.swiper-pagination-bullets) { bottom: 8px !important; }
+
+/* Esconde setas no mobile (defensivo) */
+@media (max-width: 768px) {
+  :global(.swiper-button-next),
+  :global(.swiper-button-prev) { display: none !important; }
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .historyGrid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "visual"
+      "copy";
   }
+  .cardVisual { max-width: 100%; }
+  .copy { transform: none; }
+}
+
+@media (max-width: 640px) {
+  .title { font-size: clamp(22px, 8vw, 32px); }
 }
