@@ -1,148 +1,93 @@
-/* ===== HERO MOBILE ===== */
-/* a seção inteira em full-bleed */
-.heroMobile {
-  width: 100vw !important;
-  max-width: 100vw !important;
-  margin: 0 auto;
-  background: #f8f2e9;
-  padding: 0;
+.hero {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 40px 20px;
+  background: #f2e6d8; /* bege escuro */
   text-align: center;
-  position: relative;
-  overflow: hidden; /* segura lateral */
 }
 
-.heroSwiper {
-  width: 100vw !important;
-  max-width: 100vw !important;
-  aspect-ratio: 16 / 9; /* garante proporção perfeita */
-  border-radius: 0;     /* sem canto arredondado → sem vazar fundo */
-  overflow: hidden;
-  margin: 0 auto 1.5rem auto;
-  background: #000;     /* fundo só atrás do vídeo */
+.heroContent {
+  max-width: 500px;
 }
 
-.heroVideo {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  background: #000;
+.subtitle {
+  font-size: 14px;
+  background: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 16px;
 }
 
-/* Medalha */
-.medalha {
-  position: absolute;
-  bottom: -30px;
-  right: 10px;
-  width: 90px;
-  height: auto;
-  z-index: 5;
-}
-
-/* Títulos, subtítulos e botões (mantive os seus) */
-.heroTitle {
-  font-size: 1.6rem;
+.title {
+  font-size: 28px;
   font-weight: 800;
   line-height: 1.3;
-  color: #000;
-  margin: 2.5rem 0 1rem;
+  margin-bottom: 20px;
 }
 
-.heroSubtitle {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+.gold {
+  background: linear-gradient(135deg, #ffd700, #b8860b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.heroButtons {
+.description {
+  font-size: 15px;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+}
+
+.ctaGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  width: 100%;
-  max-width: 320px;
+  gap: 12px;
+  align-items: center;
 }
 
-.heroButtonPrimary {
-  background: linear-gradient(90deg, #d4af37, #b8860b);
-  color: #fff;
-  padding: 0.9rem;
-  border-radius: 8px;
+.ctaGold {
+  background: linear-gradient(135deg, #ffd700, #b8860b);
+  padding: 12px 28px;
+  border-radius: 40px;
   font-weight: bold;
-  font-size: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #1a1a1a;
+  text-decoration: none;
   transition: all 0.3s ease;
-}
-.heroButtonPrimary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
 }
 
-.heroButtonSecondary {
+.ctaGold:hover {
+  color: #fffbe6;
+  box-shadow: 0 0 12px #ffd700, 0 0 24px #ffec8b, 0 0 40px #ffd700;
+}
+
+.cta {
   background: #fff;
-  border: 1px solid #ccc;
-  color: #000;
-  padding: 0.9rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-.heroButtonSecondary:hover { background: #f4f4f4; }
-
-/* UI do Swiper */
-:global(.swiper) { width: 100%; max-width: 100vw; overflow: hidden !important; }
-:global(.swiper-slide) { width: 100% !important; }
-:global(.swiper-pagination-bullet) { background: #b8860b !important; opacity: .6; }
-:global(.swiper-pagination-bullet-active) { background: #d4af37 !important; opacity: 1; }
-@media (max-width: 768px) {
-  :global(.swiper-button-next), :global(.swiper-button-prev) { display: none !important; }
-}
-/* TODOS os slides (vídeo + imagem) — foco mais para baixo */
-.heroSwiper :global(.swiper-slide) .heroVideo{
-  object-position: 50% 72% !important;  /* ajuste fino: 68–78% */
-}
-/* Força HeroMobile a ocupar toda a largura no celular */
-.heroMobile {
-  width: 100vw !important;
-  max-width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
-  overflow-x: hidden !important;
+  border: 1px solid #ddd;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-/* O carrossel também ocupa full-bleed no mobile */
-@media (max-width: 768px) {
-  .heroSwiper {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    height: 64svh;    /* altura ideal */
-    min-height: 300px;
-    border-radius: 0; /* remove cantos arredondados se preferir */
-    margin: 0 auto;
-  }
+.cta:hover {
+  background: #f5f5f5;
+}
 
-  .heroSwiper :global(.swiper-slide) {
-    width: 100% !important;
-    height: 100% !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.heroMedia {
+  margin-top: 24px;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
 
-  .heroVideo {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;
-    object-position: 50% 70%; /* move o foco para baixo */
-    background: #000;
-  }
+.heroMedia img {
+  width: 100%;
+  height: auto;
+  display: block;
 }

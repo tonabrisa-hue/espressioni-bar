@@ -1,25 +1,11 @@
-import { useEffect, useState } from "react";
+// components/Navbar.jsx
 import styles from "@/styles/Navbar.module.css";
 
 export default function Navbar() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  // 🔴 Não renderiza nada no mobile
-  if (isMobile) {
-    return null;
-  }
-
   return (
     <header className={styles.header}>
       <div className={styles.navInner}>
-        {/* Logo */}
+        {/* Logo (link para home) */}
         <a href="/" aria-label="Página inicial">
           <img
             src="/branding/logo-eternize.png"
@@ -28,7 +14,7 @@ export default function Navbar() {
           />
         </a>
 
-        {/* Desktop Menu */}
+        {/* Menu Desktop */}
         <nav id="primary-navigation" className={styles.menu} role="navigation">
           <a
             href="https://drive.google.com/file/d/1c_Ie-BvUkEZpczDx8QProIJOrCM9LSLy/view?usp=sharing"
